@@ -7,7 +7,7 @@ function App() {
   const [todos, setTodos] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/todos')
+    fetch('https://todo-app-production-736f.up.railway.app/todos')
       .then((res) => res.json())
       .then((data) => setTodos(data))
   }, [])
@@ -16,7 +16,7 @@ function App() {
     fetch('http://localhost:3000/todos', {
       method : 'POST',
       headers: { 'Content-Type' : 'application/json'},
-      body: JSON.stringify({ title, title})
+      body: JSON.stringify({ title: title})
 
     })
         .then((res) => res.json())
